@@ -19,14 +19,14 @@
         }
         h1 {
             text-align: center;
-            font-size: 36px;
+            font-size: 32px;
         }
         .profile-image {
             display: block;
             margin: 0 auto 20px;
             border-radius: 50%;
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border: 2px solid var(--text-color, #333);
         }
@@ -40,11 +40,12 @@
         .button {
             display: inline-block;
             margin: 10px;
-            padding: 10px 20px;
+            padding: 8px 15px;
             background-color: #007bff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            font-size: 14px;
             transition: background-color 0.3s;
         }
         .button:hover {
@@ -52,8 +53,10 @@
         }
         .theme-switch {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
+            font-size: 12px;
+            padding: 5px 10px;
         }
         ul {
             list-style-type: disc;
@@ -70,7 +73,7 @@
 
     <div class="section">
         <h2>About Me:</h2>
-        <p>My name is Farhan Mefleh Al-Khawaldeh, born on February 11, 2003. I am a 21-year-old passionate about renewable energy and youth empowerment. I am a fourth-year student in Renewable and Sustainable Energy Engineering at Al al-Bayt University. Throughout my journey, I have been involved in various leadership roles, volunteer work, and technical projects, all focusing on sustainability, innovation, and community development. I am driven by the desire to make Jordan a greener place and to empower young people to take action.</p>
+        <p>My name is Farhan Mefleh Al-Khawaldeh, born on February 11, 2003. I am a 21-year-old passionate about renewable energy and youth empowerment. I am a fourth-year student in Renewable and Sustainable Energy Engineering at Al al-Bayt University. I actively contribute to global sustainability initiatives and advocate for renewable energy solutions in Jordan and worldwide. My goal is to combine local expertise with global trends in sustainable development to create a positive impact.</p>
     </div>
 
     <div class="section">
@@ -110,7 +113,7 @@
             <li>Project Management and Event Organization</li>
             <li>Graphic Design and Multimedia Editing</li>
             <li>Renewable Energy and Sustainability</li>
-            <li>Problem-Solving and Time Management</li>
+            <li>Global Problem-Solving and Sustainable Development</li>
             <li>Training and Facilitation</li>
         </ul>
     </div>
@@ -123,13 +126,8 @@
     </div>
 
     <div class="section">
-        <h2>Interests:</h2>
-        <ul>
-            <li>Sustainable Development and Green Energy</li>
-            <li>Community Volunteering and Social Impact</li>
-            <li>Design and Technology Innovation</li>
-            <li>Youth Leadership Programs and Initiatives</li>
-        </ul>
+        <h2>Global Initiatives:</h2>
+        <p>Actively involved in global sustainability efforts. Participated in multiple international conferences on renewable energy and youth empowerment, contributing to discussions on global energy challenges and solutions. I am keen on bridging local efforts with international best practices for a greener planet.</p>
     </div>
 
     <div class="section">
