@@ -19,8 +19,6 @@
         h1 {
             text-align: center;
             font-size: 32px;
-            color: #1e90ff; /* لون أكثر سطوعًا */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* إضافة تأثير ظل للنص */
         }
         .profile-image {
             display: block;
@@ -30,7 +28,6 @@
             height: 150px;
             object-fit: cover;
             border: 2px solid var(--text-color, #333);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* إضافة ظل */
         }
         .section {
             background-color: var(--section-bg-color, #f9f9f9);
@@ -38,23 +35,20 @@
             border-radius: 10px;
             margin-bottom: 20px;
             border: 1px solid var(--border-color, #ddd);
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* إضافة ظل */
         }
         .button {
             display: inline-block;
             margin: 10px;
             padding: 8px 15px;
-            background-color: #ff4500; /* لون برتقالي */
+            background-color: #007bff;
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
-            transition: background-color 0.3s, transform 0.2s ease-in-out; /* تأثير الانتقال */
+            transition: background-color 0.3s;
         }
         .button:hover {
-            background-color: #ff6347; /* لون أحمر فاتح عند التمرير */
-            transform: scale(1.1); /* تكبير طفيف عند التمرير */
-            animation: shake 0.5s ease-in-out; /* إضافة تأثير اهتزاز */
+            background-color: #0056b3;
         }
         .theme-switch {
             position: absolute;
@@ -62,27 +56,27 @@
             right: 10px;
             font-size: 12px;
             padding: 5px 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
+            animation: pulse 2s infinite;
         }
         ul {
             list-style-type: disc;
             padding-left: 20px;
         }
-        @keyframes shake {
-            0% { transform: translate(1px, 1px) rotate(0deg); }
-            10% { transform: translate(-1px, -2px) rotate(-1deg); }
-            20% { transform: translate(-3px, 0px) rotate(1deg); }
-            30% { transform: translate(3px, 2px) rotate(0deg); }
-            40% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 2px) rotate(-1deg); }
-            60% { transform: translate(-3px, 1px) rotate(0deg); }
-            70% { transform: translate(3px, 1px) rotate(-1deg); }
-            80% { transform: translate(-1px, -1px) rotate(1deg); }
-            90% { transform: translate(1px, 2px) rotate(0deg); }
-            100% { transform: translate(1px, -2px) rotate(-1deg); }
+
+        /* نبض الزر */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+            }
+            50% {
+                transform: scale(1.1);
+                box-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.6);
+            }
         }
     </style>
 </head>
@@ -153,4 +147,33 @@
     </div>
 
     <div class="section">
-        <
+        <h2>Contact Me:</h2>
+        <a href="mailto:frhankh07@gmail.com" class="button">Email Me</a>
+        <a href="tel:+962781339210" class="button">Call Me</a>
+        <a href="https://linkedin.com/in/farhan-mefleh-alkhawaldeh" class="button">Connect on LinkedIn</a>
+    </div>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        let isDarkMode = false;
+
+        toggleBtn.addEventListener('click', function() {
+            if (!isDarkMode) {
+                document.documentElement.style.setProperty('--bg-color', '#333');
+                document.documentElement.style.setProperty('--text-color', '#fff');
+                document.documentElement.style.setProperty('--section-bg-color', '#444');
+                document.documentElement.style.setProperty('--border-color', '#555');
+                toggleBtn.textContent = 'Switch to Light Mode';
+            } else {
+                document.documentElement.style.setProperty('--bg-color', '#fff');
+                document.documentElement.style.setProperty('--text-color', '#333');
+                document.documentElement.style.setProperty('--section-bg-color', '#f9f9f9');
+                document.documentElement.style.setProperty('--border-color', '#ddd');
+                toggleBtn.textContent = 'Switch to Dark Mode';
+            }
+            isDarkMode = !isDarkMode;
+        });
+    </script>
+
+</body>
+</html>
