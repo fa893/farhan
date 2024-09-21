@@ -9,8 +9,8 @@
     <title>Digital Identity of Farhan Mefleh Al-Khawalda</title>
     <style>
         body {
-            background-color: #FB2902; /* اللون الأحمر للخلفية */
-            color: #fff; /* اللون الأبيض للنص */
+            background-color: #fff; /* اللون الأبيض للخلفية */
+            color: #FB2902; /* اللون الأحمر للنص */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
@@ -19,7 +19,7 @@
         h1 {
             text-align: center;
             font-size: 32px;
-            color: #fff; /* اللون الأبيض للعناوين */
+            color: #FB2902; /* اللون الأحمر للعناوين */
         }
         .profile-image {
             display: block;
@@ -28,22 +28,22 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 2px solid #fff; /* اللون الأبيض لحواف الصورة */
+            border: 2px solid #FB2902; /* اللون الأحمر لحواف الصورة */
         }
         .section {
-            background-color: rgba(255, 255, 255, 0.2); /* لون الخلفية الشفاف للأقسام */
+            background-color: rgba(251, 41, 2, 0.1); /* لون خلفية شفاف للأقسام */
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.5); /* لون الحواف */
-            color: #fff; /* اللون الأبيض للنص داخل الأقسام */
+            border: 1px solid #FB2902; /* لون الحواف */
+            color: #FB2902; /* اللون الأحمر للنص داخل الأقسام */
         }
         .button {
             display: inline-block;
             margin: 10px;
             padding: 8px 15px;
-            background-color: #fff; /* لون الخلفية للأزرار */
-            color: #FB2902; /* لون النص داخل الأزرار */
+            background-color: #FB2902; /* لون الخلفية للأزرار */
+            color: #fff; /* اللون الأبيض للنص داخل الأزرار */
             text-decoration: none;
             border-radius: 5px;
             font-size: 14px;
@@ -59,29 +59,29 @@
             right: 10px;
             font-size: 12px;
             padding: 5px 10px;
-            background-color: #fff; /* اللون الأبيض لخلفية الزر */
-            color: #FB2902; /* اللون الأحمر للنص */
+            background-color: #FB2902; /* اللون الأحمر لخلفية الزر */
+            color: #fff; /* اللون الأبيض للنص */
             border-radius: 5px;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+                box-shadow: 0 0 0 0 rgba(251, 41, 2, 0.7);
             }
             70% {
                 transform: scale(1.1);
-                box-shadow: 0 0 10px 10px rgba(255, 255, 255, 0);
+                box-shadow: 0 0 10px 10px rgba(251, 41, 2, 0);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+                box-shadow: 0 0 0 0 rgba(251, 41, 2, 0);
             }
         }
         ul {
             list-style-type: disc;
             padding-left: 20px;
-            color: #fff; /* اللون الأبيض لقائمة المهارات */
+            color: #FB2902; /* اللون الأحمر لقائمة المهارات */
         }
     </style>
 </head>
@@ -170,10 +170,10 @@
                 document.documentElement.style.setProperty('--border-color', '#555');
                 toggleBtn.textContent = 'Switch to Light Mode';
             } else {
-                document.documentElement.style.setProperty('--bg-color', '#FB2902');
-                document.documentElement.style.setProperty('--text-color', '#fff');
-                document.documentElement.style.setProperty('--section-bg-color', 'rgba(255, 255, 255, 0.2)');
-                document.documentElement.style.setProperty('--border-color', 'rgba(255, 255, 255, 0.5)');
+                document.documentElement.style.setProperty('--bg-color', '#fff');
+                document.documentElement.style.setProperty('--text-color', '#FB2902');
+                document.documentElement.style.setProperty('--section-bg-color', 'rgba(251, 41, 2, 0.1)');
+                document.documentElement.style.setProperty('--border-color', '#FB2902');
                 toggleBtn.textContent = 'Switch to Dark Mode';
             }
             isDarkMode = !isDarkMode;
