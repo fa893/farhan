@@ -10,7 +10,7 @@
     <style>
         body {
             background-color: #fff; /* اللون الأبيض للخلفية */
-            color: #00000; /* اللون الأحمر للنص */
+            color: #000; /* اللون الأسود للنص */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
@@ -19,7 +19,7 @@
         h1 {
             text-align: center;
             font-size: 32px;
-            color: #00000; /* اللون الأحمر للعناوين */
+            color: #000; /* اللون الأسود للعناوين */
         }
         .profile-image {
             display: block;
@@ -28,21 +28,20 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 2px solid #00000; /* اللون الأحمر لحواف الصورة */
+            border: 2px solid #000; /* اللون الأسود لحواف الصورة */
         }
         .section {
             background-color: rgba(251, 41, 2, 0.1); /* لون خلفية شفاف للأقسام */
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border: 1px solid #00000; /* لون الحواف */
-            color: #00000; /* اللون الأحمر للنص داخل الأقسام */
+            border: 1px solid #000; /* لون الحواف */
         }
         .button {
             display: inline-block;
             margin: 10px;
             padding: 8px 15px;
-            background-color: #00000; /* لون الخلفية للأزرار */
+            background-color: #008CBA; /* لون أزرار جديد */
             color: #fff; /* اللون الأبيض للنص داخل الأزرار */
             text-decoration: none;
             border-radius: 5px;
@@ -50,16 +49,16 @@
             transition: background-color 0.3s;
         }
         .button:hover {
-            background-color: #333; /* تغيير لون الخلفية عند التحويم */
+            background-color: #005f75; /* لون أغمق عند التحويم */
             color: #fff; /* اللون الأبيض للنص عند التحويم */
         }
         .theme-switch {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+            display: block; /* جعل الزر يظهر بشكل منفصل */
+            margin: 20px auto; /* توسيع المساحة حول الزر */
+            width: fit-content;
             font-size: 12px;
             padding: 5px 10px;
-            background-color:#00000; /* اللون الأحمر لخلفية الزر */
+            background-color: #008CBA; /* لون جديد لخلفية الزر */
             color: #fff; /* اللون الأبيض للنص */
             border-radius: 5px;
             animation: pulse 2s infinite;
@@ -67,30 +66,29 @@
         @keyframes pulse {
             0% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(251, 41, 2, 0.7);
+                box-shadow: 0 0 0 0 rgba(0, 140, 202, 0.7);
             }
             70% {
                 transform: scale(1.1);
-                box-shadow: 0 0 10px 10px rgba(251, 41, 2, 0);
+                box-shadow: 0 0 10px 10px rgba(0, 140, 202, 0);
             }
             100% {
                 transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(251, 41, 2, 0);
+                box-shadow: 0 0 0 0 rgba(0, 140, 202, 0);
             }
         }
         ul {
             list-style-type: disc;
             padding-left: 20px;
-            color: #FB2902; /* اللون الأحمر لقائمة المهارات */
         }
     </style>
 </head>
 <body>
 
-    <h1>Digital Identity of Farhan Mefleh Al-Khawalda</h1>
-    <img src="https://assets.onecompiler.app/42r523uca/42srbjrx2/3319086100.png" alt="Farhan Al-Khawalda" class="profile-image">
-
     <button class="button theme-switch" id="theme-toggle">Switch to Dark Mode</button>
+    
+    <h1 id="main-title">Digital Identity of Farhan Mefleh Al-Khawalda</h1>
+    <img src="https://assets.onecompiler.app/42r523uca/42srbjrx2/3319086100.png" alt="Farhan Al-Khawalda" class="profile-image">
 
     <div class="section">
         <h2>About Me:</h2>
@@ -129,7 +127,7 @@
 
     <div class="section">
         <h2>Skills and Expertise:</h2>
-        <ul>
+        <ul id="skills-list">
             <li>Youth Leadership and Empowerment</li>
             <li>Project Management and Event Organization</li>
             <li>Graphic Design and Multimedia Editing</li>
@@ -160,20 +158,38 @@
 
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
+        const mainTitle = document.getElementById('main-title');
+        const skillsList = document.getElementById('skills-list');
         let isDarkMode = false;
 
         toggleBtn.addEventListener('click', function() {
             if (!isDarkMode) {
-                document.documentElement.style.setProperty('--bg-color', '#333');
-                document.documentElement.style.setProperty('--text-color', '#fff');
-                document.documentElement.style.setProperty('--section-bg-color', '#444');
-                document.documentElement.style.setProperty('--border-color', '#555');
+                document.body.style.backgroundColor = '#333';
+                document.body.style.color = '#fff';
+                mainTitle.style.color = '#fff'; // تغيير لون العنوان
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    section.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                    section.style.borderColor = '#fff'; // تغيير لون الحواف
+                });
+                const skillItems = skillsList.querySelectorAll('li');
+                skillItems.forEach(item => {
+                    item.style.color = '#fff'; // تغيير لون المهارات
+                });
                 toggleBtn.textContent = 'Switch to Light Mode';
             } else {
-                document.documentElement.style.setProperty('--bg-color', '#fff');
-                document.documentElement.style.setProperty('--text-color', '#00000');
-                document.documentElement.style.setProperty('--section-bg-color', 'rgba(251, 41, 2, 0.1)');
-                document.documentElement.style.setProperty('--border-color', '#00000');
+                document.body.style.backgroundColor = '#fff';
+                document.body.style.color = '#000';
+                mainTitle.style.color = '#000'; // إعادة لون العنوان
+                const sections = document.querySelectorAll('.section');
+                sections.forEach(section => {
+                    section.style.backgroundColor = 'rgba(251, 41, 2, 0.1)';
+                    section.style.borderColor = '#000';
+                });
+                const skillItems = skillsList.querySelectorAll('li');
+                skillItems.forEach(item => {
+                    item.style.color = '#000'; // إعادة لون المهارات
+                });
                 toggleBtn.textContent = 'Switch to Dark Mode';
             }
             isDarkMode = !isDarkMode;
