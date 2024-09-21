@@ -10,7 +10,7 @@
     <style>
         body {
             background-color: #fff; /* اللون الأبيض للخلفية */
-            color: #000000; /* اللون الأحمر للنص */
+            color: #00000; /* اللون الأحمر للنص */
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
@@ -19,7 +19,7 @@
         h1 {
             text-align: center;
             font-size: 32px;
-            color: #FB2902; /* اللون الأحمر للعناوين */
+            color: #00000; /* اللون الأحمر للعناوين */
         }
         .profile-image {
             display: block;
@@ -28,21 +28,21 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            border: 2px solid #FB2902; /* اللون الأحمر لحواف الصورة */
+            border: 2px solid #00000; /* اللون الأحمر لحواف الصورة */
         }
         .section {
             background-color: rgba(251, 41, 2, 0.1); /* لون خلفية شفاف للأقسام */
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            border: 1px solid #FB2902; /* لون الحواف */
-            color: #FB2902; /* اللون الأحمر للنص داخل الأقسام */
+            border: 1px solid #00000; /* لون الحواف */
+            color: #00000; /* اللون الأحمر للنص داخل الأقسام */
         }
         .button {
             display: inline-block;
             margin: 10px;
             padding: 8px 15px;
-            background-color: #FB2902; /* لون الخلفية للأزرار */
+            background-color: #00000; /* لون الخلفية للأزرار */
             color: #fff; /* اللون الأبيض للنص داخل الأزرار */
             text-decoration: none;
             border-radius: 5px;
@@ -59,7 +59,7 @@
             right: 10px;
             font-size: 12px;
             padding: 5px 10px;
-            background-color: #FB2902; /* اللون الأحمر لخلفية الزر */
+            background-color:#00000; /* اللون الأحمر لخلفية الزر */
             color: #fff; /* اللون الأبيض للنص */
             border-radius: 5px;
             animation: pulse 2s infinite;
@@ -171,9 +171,9 @@
                 toggleBtn.textContent = 'Switch to Light Mode';
             } else {
                 document.documentElement.style.setProperty('--bg-color', '#fff');
-                document.documentElement.style.setProperty('--text-color', '#FB2902');
+                document.documentElement.style.setProperty('--text-color', '#00000');
                 document.documentElement.style.setProperty('--section-bg-color', 'rgba(251, 41, 2, 0.1)');
-                document.documentElement.style.setProperty('--border-color', '#FB2902');
+                document.documentElement.style.setProperty('--border-color', '#00000');
                 toggleBtn.textContent = 'Switch to Dark Mode';
             }
             isDarkMode = !isDarkMode;
