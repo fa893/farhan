@@ -1,75 +1,61 @@
-<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Simulation</title>
+    <link rel="stylesheet" href="/nreg/assets/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/nreg/assets/css/user.css"/>
+    <title>البوابة الالكترونية للطالب</title>
     <style>
         body {
-            background-color: #008000; /* اللون الأخضر */
-            color: white; /* اللون الأبيض للنص */
+            background-color: #ffffff;
         }
-
-        .form-container {
-            margin: 50px auto;
-            padding: 20px;
-            width: 300px;
-            background-color: white;
-            color: #008000; /* لون النص داخل النموذج */
-            border-radius: 10px;
-        }
-
-        input[type="text"], input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #008000;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #008000;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: white;
-            color: #008000;
+        #announ, .errMsg {
+            display: none; /* إخفاء قسم الإعلانات والأخطاء */
         }
     </style>
+    <script type="text/javascript" language="javascript" src="/nreg/js/Validate.js"></script>
+    <script type="text/javascript" language="javascript" src="/nreg/js/LoginCheck.js"></script>
+    <script type="text/javascript" language="javascript" src="/nreg/js/numberonly.js"></script>
+    <link rel="stylesheet" type="text/css" href="/nreg/floatbox/floatbox.css">
+    <script type="text/javascript" src="/nreg/floatbox/floatbox.js"></script>
 </head>
-<body>
-    <div class="form-container">
-        <form id="customForm">
-            <label for="UsrId">الرقم الجامعي:</label>
-            <input type="text" id="UsrId" name="UsrId" required>
+<body dir="rtl">
+    <div id="content" class="content container-fluid">
+        <div id="header" class="hed">
+            <img class="img-responsive" src="/nreg/assets/img/logo.png">
+        </div>
 
-            <label for="password">كلمة المرور:</label>
-            <input type="password" id="password" name="password" required>
+        <section id="login" class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+            <div id="loginBox" class="loginBox">
+                <form method="post" id="signin" name="signin" action="/nreg/Login.do">
+                    <div class="lock"><img src="assets/img/lock.png" class="fRight">
+                        <p class="fRight txtLog">تسجيل الدخول</p>
+                    </div>
+                    <div class="fRight rowTxt">
+                        <p class="labTxt fRight">الرقم الجامعي</p>
+                        <input type="text" class="fRight" size="16" maxlength="10" name="UsrId" id="UsrId"
+                               onKeyPress="return numberonly(this, event);" onkeyup="CheckLength(this)" value=""/>
+                    </div>
+                    <div class="fRight rowTxt">
+                        <p class="labTxt fRight">كلمـــــــة المرور</p>
+                        <input type="password" class="fRight" size=16 maxlength="100" name="password" id="password"/>
+                    </div>
+                    <div class="fRight rowTxt">
+                        <input type="hidden" name="hash" value="UzXQnw9Ru0LzFSAF"/>
+                        <button class="btn btn-success btnTxt fRight" type="submit">دخـــــــول</button>
+                        <p class="fRight remTxt"><a data-toggle="modal" data-target="#largeModal" href="/nreg/restPassword.jsp">| نسيت كلمة السر؟</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
 
-            <button type="submit">دخول</button>
-        </form>
-        <p>تمت محاكاة هذه البوابة من قبل المهندس فرحان الخوالده</p>
+        <!-- يمكن هنا إضافة أي محتوى آخر يحتاجه الموقع -->
+
+        <section class="foot col-lg-12 col-sm-12 col-xs-12 col-md-12">
+            <p class="copRight">Copyright © 2017 - AABU Computer Center</p>
+        </section>
     </div>
-
-    <script>
-        document.getElementById("customForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
-
-            // الحصول على البيانات من الحقول
-            var userId = document.getElementById("UsrId").value;
-            var password = document.getElementById("password").value;
-
-            // بناء رابط URL مع البيانات المدخلة
-            var redirectUrl = "https://student.aabu.edu.jo/nreg/Login.do?UsrId=" + encodeURIComponent(userId) + "&password=" + encodeURIComponent(password);
-
-            // توجيه المستخدم إلى الرابط مباشرةً
-            window.location.href = redirectUrl;
-        });
-    </script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
