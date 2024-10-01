@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form action="https://student.aabu.edu.jo/nreg/" method="POST">
+        <form id="customForm">
             <label for="UsrId">الرقم الجامعي:</label>
             <input type="text" id="UsrId" name="UsrId" required>
 
@@ -55,5 +55,21 @@
         </form>
         <p>تمت محاكاة هذه البوابة من قبل المهندس فرحان الخوالده</p>
     </div>
+
+    <script>
+        document.getElementById("customForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+            // الحصول على البيانات من الحقول
+            var userId = document.getElementById("UsrId").value;
+            var password = document.getElementById("password").value;
+
+            // بناء رابط URL مع البيانات المدخلة
+            var redirectUrl = "https://student.aabu.edu.jo/nreg/Login.do?UsrId=" + encodeURIComponent(userId) + "&password=" + encodeURIComponent(password);
+
+            // توجيه المستخدم إلى الرابط مباشرةً
+            window.location.href = redirectUrl;
+        });
+    </script>
 </body>
 </html>
