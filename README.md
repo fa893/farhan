@@ -1,71 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"لل
-    "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/nreg/assets/bootstrap/css/bootstrap.css"/>
-        <link rel="stylesheet" href="/nreg/assets/css/user.css"/>
-        <title>البوابة الالكترونية للطالب</title>
-        <style>
-            body {
-                background-color: #ffffff;
-            }
-            .hidden {
-                display: none;
-            }
-        </style>
-    </head>
-    <body dir="rtl">
-        <div id="content" class="content container-fluid">
-            <div id="header" class="hed"><img class="img-responsive" src="/nreg/assets/img/logo.png"></div>
+<!DOCTYPE html>سي
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Simulation</title>
+    <style>
+        body {
+            background-color: #008000; /* اللون الأخضر */
+            color: white; /* اللون الأبيض للنص */
+        }
 
-            <section id="skipNotifications" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <button id="skipButton" class="btn btn-primary">تجاوز الإعلانات</button>
-            </section>
+        .form-container {
+            margin: 50px auto;
+            padding: 20px;
+            width: 300px;
+            background-color: white;
+            color: #008000; /* لون النص داخل النموذج */
+            border-radius: 10px;
+        }
 
-            <section id="announ" class="announ col-lg-12 col-sm-12 col-xs-12 col-md-12 txtR hidden">
-                <div class="announTxt">
-                    <p><strong>الإعلانات</strong></p>
-                </div>
-            </section>
-            <section class="announList col-lg-12 col-sm-12 col-xs-12 col-md-12 hidden">
-                <div class="announLstCont">
-                    <p></p>
-                    <!-- يمكنك إضافة المزيد من الإعلانات هنا -->
-                </div>
-            </section>
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #008000;
+            border-radius: 5px;
+        }
 
-            <section id="login" class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
-                <div id="loginBox" class="loginBox">
-                    <form method="post" id="signin" name="signin" action="/nreg/Login.do">
-                        <div class="lock"><img src="assets/img/lock.png" class="fRight">
-                            <p class="fRight txtLog">تسجيل الدخول</p>
-                        </div>
-                        <div class="fRight rowTxt">
-                            <p class="labTxt fRight">الرقم الجامعي</p>
-                            <input type="text" class="fRight"  size="16"  maxlength="10" name="UsrId" id="UsrId"/>
-                        </div>
-                        <div class="fRight rowTxt">
-                            <p class="labTxt fRight">كلمـــــــة المرور </p>
-                            <input type="password" class="fRight" size=16 maxlength="100" name="password" id="password"/>
-                        </div>
-                        <div class="fRight rowTxt">
-                            <button class="btn btn-success btnTxt fRight" type="submit">دخـــــــول </button>
-                            <p class="fRight remTxt"><a href="/nreg/restPassword.jsp">| نسيت كلمة السر؟</a></p>
-                        </div>
-                    </form>
-                </div>
-            </section>
-        </div>
+        button {
+            background-color: #008000;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-        <script src="/nreg/assets/bootstrap/js/bootstrap.min.js"></script>
-        <script>
-            document.getElementById("skipButton").onclick = function() {
-                // إخفاء قسم الإعلانات
-                document.getElementById("announ").classList.add("hidden");
-                document.querySelector(".announList").classList.add("hidden");
-            };
-        </script>
-    </body>
+        button:hover {
+            background-color: white;
+            color: #008000;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="customForm">
+            <label for="UsrId">الرقم الجامعي:</label>
+            <input type="text" id="UsrId" name="UsrId" required>
+
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">دخول</button>
+        </form>
+        <p>تمت محاكاة هذه البوابة من قبل المهندس فرحان الخوالده</p>
+    </div>
+
+    <script>
+        document.getElementById("customForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // منع الإرسال الافتراضي للنموذج
+
+            // الحصول على البيانات من الحقول
+            var userId = document.getElementById("UsrId").value;
+            var password = document.getElementById("password").value;
+
+            // بناء رابط URL مع البيانات المدخلة
+            var redirectUrl = "https://student.aabu.edu.jo/nreg/Login.do?UsrId=" + encodeURIComponent(userId) + "&password=" + encodeURIComponent(password);
+
+            // إضافة جزء لجعل الصفحة المستهدفة تتجاوز الإعلانات
+            redirectUrl += "&skipNotifications=true"; // إضافة معلمة لتخطي الإعلانات
+
+            // توجيه المستخدم إلى الرابط مباشرةً
+            window.location.href = redirectUrl;
+        });
+    </script>
+</body>
 </html>
