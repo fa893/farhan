@@ -1,4 +1,4 @@
-<!DOCTYPE html>سي
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,15 @@
             background-color: white;
             color: #008000;
         }
+
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff3cd; /* لون خلفية الرسالة */
+            color: #856404; /* لون النص */
+            border: 1px solid #ffeeba; /* لون الحدود */
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -54,6 +63,7 @@
             <button type="submit">دخول</button>
         </form>
         <p>تمت محاكاة هذه البوابة من قبل المهندس فرحان الخوالده</p>
+        <div id="messageContainer" class="message" style="display: none;"></div>
     </div>
 
     <script>
@@ -64,14 +74,13 @@
             var userId = document.getElementById("UsrId").value;
             var password = document.getElementById("password").value;
 
-            // بناء رابط URL مع البيانات المدخلة
-            var redirectUrl = "https://student.aabu.edu.jo/nreg/Login.do?UsrId=" + encodeURIComponent(userId) + "&password=" + encodeURIComponent(password);
+            // هنا يمكنك إضافة التحقق من البيانات إذا لزم الأمر
+            // ...
 
-            // إضافة جزء لجعل الصفحة المستهدفة تتجاوز الإعلانات
-            redirectUrl += "&skipNotifications=true"; // إضافة معلمة لتخطي الإعلانات
-
-            // توجيه المستخدم إلى الرابط مباشرةً
-            window.location.href = redirectUrl;
+            // عرض رسالة تطلب من المستخدم مراجعة مكتب خدمة العلم
+            var messageContainer = document.getElementById("messageContainer");
+            messageContainer.innerHTML = "يرجى مراجعة مكتب خدمة العلم لغايات التأجيل حيث لن تتمكن من التسجيل الا بعد مراجعة مكتب خدمة العلم في جامعة آل البيت.";
+            messageContainer.style.display = "block"; // إظهار الرسالة
         });
     </script>
 </body>
