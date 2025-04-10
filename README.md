@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Professional Portfolio - Farhan Mefleh Al-Khawalda</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -13,10 +13,10 @@
             --dark: #2c3e50;
             --light: #ecf0f1;
             --text: #2c3e50;
-            --background: #f9f9f9;
-            --card-bg: white;
-            --header-bg: white;
-            --shadow: 0 5px 15px rgba(0,0,0,0.05);
+            --background: rgba(255, 255, 255, 0.1); /* أبيض شبه شفاف */
+            --card-bg: rgba(255, 255, 255, 0.1);
+            --header-bg: rgba(255, 255, 255, 0.1);
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
             --section-border: 4px solid var(--accent);
         }
         
@@ -28,9 +28,9 @@
             --dark: #2c3e50;
             --light: #34495e;
             --text: #ecf0f1;
-            --background: #2c3e50;
-            --card-bg: #34495e;
-            --header-bg: #34495e;
+            --background: rgba(44, 62, 80, 0.95);
+            --card-bg: rgba(52, 73, 94, 0.8);
+            --header-bg: rgba(52, 73, 94, 0.9);
             --shadow: 0 5px 15px rgba(0,0,0,0.2);
             --section-border: 4px solid var(--accent);
         }
@@ -44,9 +44,12 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--background);
             color: var(--text);
             line-height: 1.6;
+            background-color: var(--background);
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-text-size-adjust: 100%;
         }
         
         /* Professional Header Animation */
@@ -58,13 +61,22 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
         }
         
         .animation-square {
             position: absolute;
-            background: rgba(52, 152, 219, 0.1);
-            border: 1px solid rgba(52, 152, 219, 0.2);
-            animation: float 15s infinite linear;
+            background: rgba(52, 152, 219, 0.3);
+            border: 1px solid rgba(52, 152, 219, 0.5);
+            animation: float 8s infinite linear;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            will-change: transform;
+        }
+        
+        .animation-square:hover {
+            background: rgba(52, 152, 219, 0.6);
+            transform: scale(1.1);
         }
         
         @keyframes float {
@@ -78,13 +90,35 @@
             }
         }
         
+        /* Click effect */
+        .click-effect {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(10);
+                opacity: 0;
+            }
+        }
+        
         /* Theme and Language Toggle */
         .toggle-container {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             display: flex;
-            gap: 10px;
+            gap: 8px;
             z-index: 1000;
         }
         
@@ -100,33 +134,51 @@
             align-items: center;
             justify-content: center;
             box-shadow: var(--shadow);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            touch-action: manipulation;
         }
         
         .toggle-btn:hover {
             transform: scale(1.1);
+            background: white !important;
+            color: #2c3e50 !important;
         }
         
         .toggle-btn i {
             font-size: 1.2rem;
+            pointer-events: none;
         }
         
         /* Main Container */
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
         }
         
         /* Professional Header */
         .professional-header {
             text-align: center;
-            margin-bottom: 3rem;
-            padding: 2rem 0;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
             position: relative;
             background: var(--header-bg);
             border-radius: 8px;
             box-shadow: var(--shadow);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+        }
+        
+        .professional-header:hover {
+            background: rgba(255, 255, 255, 0.95) !important;
+        }
+        
+        .professional-header:hover h1,
+        .professional-header:hover .title {
+            color: #2c3e50 !important;
         }
         
         .professional-header::after {
@@ -141,49 +193,67 @@
         }
         
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 5px solid var(--card-bg);
+            border: 4px solid var(--card-bg);
             box-shadow: var(--shadow);
-            margin-bottom: 1.5rem;
-            transition: transform 0.5s ease;
+            margin-bottom: 1rem;
+            transition: transform 0.5s ease, border-color 0.3s ease;
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
         }
         
         .profile-img:hover {
             transform: scale(1.05);
+            border-color: white !important;
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
             font-weight: 600;
+            transition: color 0.3s ease;
         }
         
         .title {
             color: var(--accent);
             font-weight: 400;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
         
         /* Professional Sections */
         .professional-section {
             background: var(--card-bg);
             border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: var(--shadow);
             border-left: var(--section-border);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: all 0.3s ease;
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s forwards;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
         
         .professional-section:hover {
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.95) !important;
+        }
+        
+        .professional-section:hover h2,
+        .professional-section:hover p,
+        .professional-section:hover li,
+        .professional-section:hover .timeline-date,
+        .professional-section:hover strong {
+            color: #2c3e50 !important;
         }
         
         @keyframes fadeInUp {
@@ -194,11 +264,12 @@
         }
         
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             position: relative;
             padding-bottom: 0.5rem;
+            transition: color 0.3s ease;
         }
         
         h2::after {
@@ -206,79 +277,92 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 40px;
             height: 2px;
             background: var(--accent);
         }
         
         p, li {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             color: var(--secondary);
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
         }
         
         ul {
             list-style-position: inside;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
         
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
         }
         
         /* Contact Cards */
         .contact-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
         
         .contact-card {
             background: var(--card-bg);
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1rem;
             box-shadow: var(--shadow);
             border-top: 3px solid var(--accent);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
             text-align: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background: rgba(255, 255, 255, 0.95) !important;
+        }
+        
+        .contact-card:hover h3,
+        .contact-card:hover a,
+        .contact-card:hover .contact-icon {
+            color: #2c3e50 !important;
         }
         
         .contact-icon {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: var(--accent);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
         }
         
         .contact-card h3 {
             color: var(--primary);
             margin-bottom: 0.5rem;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
         
         .contact-card a {
             color: var(--secondary);
             text-decoration: none;
             transition: color 0.3s ease;
-        }
-        
-        .contact-card a:hover {
-            color: var(--accent);
+            font-size: 0.9rem;
+            word-break: break-all;
         }
         
         /* Timeline for Experience */
         .timeline {
             position: relative;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
         }
         
         .timeline::before {
             content: '';
             position: absolute;
-            left: 7px;
+            left: 5px;
             top: 0;
             bottom: 0;
             width: 2px;
@@ -287,16 +371,16 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2rem;
+            left: -1.5rem;
             top: 5px;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: var(--accent);
             border: 2px solid var(--card-bg);
@@ -305,21 +389,42 @@
         .timeline-date {
             color: var(--accent);
             font-weight: 500;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
         
-        /* Responsive */
-        @media (max-width: 768px) {
+        /* Mobile-specific optimizations */
+        @media (max-width: 480px) {
             .container {
-                padding: 1.5rem;
+                padding: 1rem;
+            }
+            
+            .professional-header {
+                padding: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 100px;
+                height: 100px;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 1.6rem;
+            }
+            
+            .title {
+                font-size: 1rem;
             }
             
             .professional-section {
-                padding: 1.5rem;
+                padding: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
             }
             
             .contact-cards {
@@ -332,8 +437,23 @@
             }
             
             .toggle-btn {
-                width: 35px;
-                height: 35px;
+                width: 36px;
+                height: 36px;
+            }
+            
+            /* Reduce animation elements on mobile */
+            .animation-square {
+                animation-duration: 12s !important;
+            }
+        }
+        
+        /* Performance optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
@@ -449,18 +569,21 @@
     </div>
     
     <script>
-        // Create background animation elements
+        // Create background animation elements - More squares for denser animation
         const animationContainer = document.getElementById('animation-container');
-        for (let i = 0; i < 15; i++) {
+        const isMobile = window.matchMedia("(max-width: 480px)").matches;
+        const squareCount = isMobile ? 25 : 40; // Fewer squares on mobile
+        
+        for (let i = 0; i < squareCount; i++) {
             const square = document.createElement('div');
             square.classList.add('animation-square');
             
             // Random properties
-            const size = Math.random() * 100 + 50;
+            const size = Math.random() * 50 + 20; // Smaller squares
             const posX = Math.random() * 100;
-            const posY = Math.random() * 100;
-            const delay = Math.random() * 15;
-            const duration = Math.random() * 20 + 10;
+            const posY = Math.random() * 120; // 120% to start some below viewport
+            const delay = Math.random() * 5;
+            const duration = Math.random() * 10 + 5;
             
             square.style.width = `${size}px`;
             square.style.height = `${size}px`;
@@ -469,27 +592,62 @@
             square.style.animationDelay = `${delay}s`;
             square.style.animationDuration = `${duration}s`;
             
+            // Add click interaction
+            square.addEventListener('click', function(e) {
+                createClickEffect(e.clientX, e.clientY);
+                this.style.transform = 'scale(1.3)';
+                this.style.background = 'rgba(255, 255, 255, 0.8)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    this.style.background = 'rgba(52, 152, 219, 0.3)';
+                }, 300);
+            });
+            
             animationContainer.appendChild(square);
         }
         
-        // Animate sections on scroll
+        // Create click effect
+        function createClickEffect(x, y) {
+            const effect = document.createElement('div');
+            effect.classList.add('click-effect');
+            effect.style.left = `${x - 15}px`;
+            effect.style.top = `${y - 15}px`;
+            document.body.appendChild(effect);
+            
+            setTimeout(() => {
+                effect.remove();
+            }, 1000);
+        }
+        
+        // Add click effect to whole background
+        document.addEventListener('click', function(e) {
+            if (e.target === animationContainer) {
+                createClickEffect(e.clientX, e.clientY);
+            }
+        });
+        
+        // Animate sections on scroll - throttled for performance
         const sections = document.querySelectorAll('.professional-section');
+        let isScrolling;
         
         function animateOnScroll() {
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight * 0.8) {
-                    const delay = section.style.animationDelay || '0s';
-                    section.style.animation = `fadeInUp 0.8s ${delay} forwards`;
-                }
-            });
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (sectionTop < windowHeight * 0.8) {
+                        const delay = section.style.animationDelay || '0s';
+                        section.style.animation = `fadeInUp 0.8s ${delay} forwards`;
+                    }
+                });
+            }, 50);
         }
         
         // Initialize animation
         window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll, { passive: true });
         
         // Set initial animation delays
         let delay = 0.1;
