@@ -28,10 +28,10 @@
             --dark: #2c3e50;
             --light: #34495e;
             --text: #ecf0f1;
-            --background: rgba(44, 62, 80, 0.95);
-            --card-bg: rgba(52, 73, 94, 0.8);
-            --header-bg: rgba(52, 73, 94, 0.9);
-            --shadow: 0 5px 15px rgba(0,0,0,0.2);
+            --background: rgba(44, 62, 80, 0.1);
+            --card-bg: rgba(52, 73, 94, 0.1);
+            --header-bg: rgba(52, 73, 94, 0.1);
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
             --section-border: 4px solid var(--accent);
         }
         
