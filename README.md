@@ -1,4 +1,4 @@
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -99,9 +99,67 @@
         <div class="dot" style="top: 65%; left: 75%; animation-duration: 30s;"></div>
         <div class="dot" style="top: 85%; left: 95%; animation-duration: 32s;"></div>
         <div class="dot" style="top: 2%; left: 42%; animation-duration: 35s;"></div>
+        <div class="dot" style="top: 10%; left: 20%; animation-duration: 12s;"></div>
+        <div class="dot" style="top: 30%; left: 40%; animation-duration: 15s;"></div>
+        <div class="dot" style="top: 50%; left: 60%; animation-duration: 18s;"></div>
+        <div class="dot" style="top: 70%; left: 80%; animation-duration: 20s;"></div>
+        <div class="dot" style="top: 90%; left: 10%; animation-duration: 22s;"></div>
+        <div class="dot" style="top: 20%; left: 30%; animation-duration: 25s;"></div>
+        <div class="dot" style="top: 40%; left: 50%; animation-duration: 28s;"></div>
+        <div class="dot" style="top: 60%; left: 70%; animation-duration: 30s;"></div>
+        <div class="dot" style="top: 80%; left: 90%; animation-duration: 32s;"></div>
+        <div class="dot" style="top: 10%; left: 50%; animation-duration: 35s;"></div>
+        <div class="dot" style="top: 15%; left: 25%; animation-duration: 12s;"></div>
+        <div class="dot" style="top: 35%; left: 45%; animation-duration: 15s;"></div>
+        <div class="dot" style="top: 55%; left: 65%; animation-duration: 18s;"></div>
+        <div class="dot" style="top: 75%; left: 85%; animation-duration: 20s;"></div>
+        <div class="dot" style="top: 95%; left: 15%; animation-duration: 22s;"></div>
+        <div class="dot" style="top: 25%; left: 35%; animation-duration: 25s;"></div>
+        <div class="dot" style="top: 45%; left: 55%; animation-duration: 28s;"></div>
+        <div class="dot" style="top: 65%; left: 75%; animation-duration: 30s;"></div>
+        <div class="dot" style="top: 85%; left: 95%; animation-duration: 32s;"></div>
+        <div class="dot" style="top: 2%; left: 42%; animation-duration: 35s;"></div>
+        <div class="dot" style="top: 10%; left: 20%; animation-duration: 12s;"></div>
+        <div class="dot" style="top: 30%; left: 40%; animation-duration: 15s;"></div>
+        <div class="dot" style="top: 50%; left: 60%; animation-duration: 18s;"></div>
+        <div class="dot" style="top: 70%; left: 80%; animation-duration: 20s;"></div>
+        <div class="dot" style="top: 90%; left: 10%; animation-duration: 22s;"></div>
+        <div class="dot" style="top: 20%; left: 30%; animation-duration: 25s;"></div>
+        <div class="dot" style="top: 40%; left: 50%; animation-duration: 28s;"></div>
+        <div class="dot" style="top: 60%; left: 70%; animation-duration: 30s;"></div>
+        <div class="dot" style="top: 80%; left: 90%; animation-duration: 32s;"></div>
+        <div class="dot" style="top: 10%; left: 50%; animation-duration: 35s;"></div>
+        <div class="dot" style="top: 15%; left: 25%; animation-duration: 12s;"></div>
+        <div class="dot" style="top: 35%; left: 45%; animation-duration: 15s;"></div>
+        <div class="dot" style="top: 55%; left: 65%; animation-duration: 18s;"></div>
+        <div class="dot" style="top: 75%; left: 85%; animation-duration: 20s;"></div>
+        <div class="dot" style="top: 95%; left: 15%; animation-duration: 22s;"></div>
+        <div class="dot" style="top: 25%; left: 35%; animation-duration: 25s;"></div>
+        <div class="dot" style="top: 45%; left: 55%; animation-duration: 28s;"></div>
+        <div class="dot" style="top: 65%; left: 75%; animation-duration: 30s;"></div>
+        <div class="dot" style="top: 85%; left: 95%; animation-duration: 32s;"></div>
+        <div class="dot" style="top: 2%; left: 42%; animation-duration: 35s;"></div>
+        <div class="dot" style="top: 10%; left: 20%; animation-duration: 12s;"></div>
+        <div class="dot" style="top: 30%; left: 40%; animation-duration: 15s;"></div>
+        <div class="dot" style="top: 50%; left: 60%; animation-duration: 18s;"></div>
+        <div class="dot" style="top: 70%; left: 80%; animation-duration: 20s;"></div>
+        <div class="dot" style="top: 90%; left: 10%; animation-duration: 22s;"></div>
+        <div class="dot" style="top: 20%; left: 30%; animation-duration: 25s;"></div>
+        <div class="dot" style="top: 40%; left: 50%; animation-duration: 28s;"></div>
+        <div class="dot" style="top: 60%; left: 70%; animation-duration: 30s;"></div>
+        <div class="dot" style="top: 80%; left: 90%; animation-duration: 32s;"></div>
+        <div class="dot" style="top: 10%; left: 50%; animation-duration: 35s;"></div>
+        <div class="dot" style="top: 15%; left: 25%; animation-duration: 12s;"></div>
+        <div class="dot" style="top: 35%; left: 45%; animation-duration: 15s;"></div>
+        <div class="dot" style="top: 55%; left: 65%; animation-duration: 18s;"></div>
+        <div class="dot" style="top: 75%; left: 85%; animation-duration: 20s;"></div>
+        <div class="dot" style="top: 95%; left: 15%; animation-duration: 22s;"></div>
+        <div class="dot" style="top: 25%; left: 35%; animation-duration: 25s;"></div>
+        <div class="dot" style="top: 45%; left: 55%; animation-duration: 28s;"></div>
+        <div class="dot" style="top: 65%; left: 75%; animation-duration: 30s;"></div>
+        <div class="dot" style="top: 85%; left: 95%; animation-duration: 32s;"></div>
+        <div class="dot" style="top: 2%; left: 42%; animation-duration: 35s;"></div>
     </div>
-
-    <button class="theme-switch bg-blue-500 text-white py-2 px-4 rounded-full pulse" id="theme-toggle">Switch to Dark Mode</button>
     
     <h1 id="main-title" class="text-center text-4xl font-bold my-5">Digital Identity of Farhan Mefleh Al-Khawalda</h1>
     <img src="https://assets.onecompiler.app/42r523uca/42srbjrx2/3319086100.png" alt="Farhan Al-Khawalda" class="profile-image mx-auto rounded-full border-4 border-white w-36 h-36 object-cover mb-5">
@@ -189,48 +247,6 @@
     </div>
 
     <script>
-        const toggleBtn = document.getElementById('theme-toggle');
-        const mainTitle = document.getElementById('main-title');
-        const skillsList = document.getElementById('skills-list');
-        let isDarkMode = false;
-
-        toggleBtn.addEventListener('click', function() {
-            if (!isDarkMode) {
-                document.body.classList.add('bg-gray-900', 'text-white');
-                document.body.classList.remove('bg-black', 'text-white');
-                mainTitle.classList.add('text-white');
-                mainTitle.classList.remove('text-white');
-                const sections = document.querySelectorAll('.section');
-                sections.forEach(section => {
-                    section.classList.add('bg-gray-800', 'border-white');
-                    section.classList.remove('bg-gray-800', 'border-white');
-                });
-                const skillItems = skillsList.querySelectorAll('li');
-                skillItems.forEach(item => {
-                    item.classList.add('text-white');
-                    item.classList.remove('text-white');
-                });
-                toggleBtn.textContent = 'Switch to Light Mode';
-            } else {
-                document.body.classList.add('bg-black', 'text-white');
-                document.body.classList.remove('bg-gray-900', 'text-white');
-                mainTitle.classList.add('text-white');
-                mainTitle.classList.remove('text-white');
-                const sections = document.querySelectorAll('.section');
-                sections.forEach(section => {
-                    section.classList.add('bg-gray-800', 'border-white');
-                    section.classList.remove('bg-gray-800', 'border-white');
-                });
-                const skillItems = skillsList.querySelectorAll('li');
-                skillItems.forEach(item => {
-                    item.classList.add('text-white');
-                    item.classList.remove('text-white');
-                });
-                toggleBtn.textContent = 'Switch to Dark Mode';
-            }
-            isDarkMode = !isDarkMode;
-        });
-
         const sectionHeaders = document.querySelectorAll('.section-header');
         sectionHeaders.forEach(header => {
             header.addEventListener('click', () => {
